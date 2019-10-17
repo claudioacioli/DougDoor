@@ -8,8 +8,8 @@ public class DogDoorSimulator{
 
         Remote remote = new Remote(door);
         System.out.println("Fido late para sair");
-        remote.pressButton();
-//        recognizer.recognizer("Au au!");
+//        remote.pressButton();
+        recognizer.recognizer("Au au!");
         System.out.println("Fido saiu");
         System.out.println("Fido ja terminou");
         try{
@@ -18,8 +18,8 @@ public class DogDoorSimulator{
             System.out.println("Ops...");
         }
         System.out.println("Fido late para entrar...");
-//        recognizer.recognizer("Au au!");
-        remote.pressButton();
+        recognizer.recognizer("Au au!");
+//        remote.pressButton();
         System.out.println("Fido ja voltou para dentro");
     }
 
