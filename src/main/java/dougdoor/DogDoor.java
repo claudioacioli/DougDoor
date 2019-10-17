@@ -6,8 +6,15 @@ import java.util.TimerTask;
 public class DogDoor{
 
     private boolean open;
+    private int duration;
 
     public DogDoor(){
+        this.open = false;
+        this.duration = 5000;
+    }
+
+    public DogDoor(int secondsToClose){
+        this.duration = secondsToClose * 1000;
         this.open = false;
     }
 
@@ -20,7 +27,7 @@ public class DogDoor{
                 DogDoor.this.close();
                 timer.cancel();
             }
-        }, 5000);
+        }, this.duration);
     }
 
     public void close(){
