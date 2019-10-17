@@ -3,7 +3,7 @@ package dougdoor;
 public class DogDoorSimulator{
 
     public static void main(String[] args) {
-        DogDoor door = new DogDoor();
+        DogDoor door = new DogDoor(3);
         BarkRecognizer recognizer = new BarkRecognizer(door);
 
         Remote remote = new Remote(door);
