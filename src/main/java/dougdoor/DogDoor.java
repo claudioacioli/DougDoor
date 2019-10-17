@@ -3,22 +3,22 @@ package dougdoor;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class DogDoor{
+class DogDoor{
 
     private boolean open;
     private int duration;
 
-    public DogDoor(){
+    DogDoor(){
         this.open = false;
         this.duration = 5000;
     }
 
-    public DogDoor(int secondsToClose){
+    DogDoor(int secondsToClose){
         this.duration = secondsToClose * 1000;
         this.open = false;
     }
 
-    public void open(){
+    void open(){
         System.out.println("A porta para cachorro abre.");
         open = true;
         final Timer timer = new Timer();
@@ -30,12 +30,12 @@ public class DogDoor{
         }, this.duration);
     }
 
-    public void close(){
+    void close(){
         System.out.println("A porta para cachorros fecha.");
         open = false;
     }
 
-    public boolean isOpen(){
+    boolean isOpen(){
         return open;
     }
 
