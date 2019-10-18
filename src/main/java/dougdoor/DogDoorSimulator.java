@@ -3,7 +3,9 @@ package dougdoor;
 public class DogDoorSimulator{
 
     public static void main(String[] args) {
-        DogDoor door = new DogDoor(3);
+
+        DogDoor door = new DogDoor();
+        door.setDuration(3);
         BarkRecognizer recognizer = new BarkRecognizer(door);
 
         Remote remote = new Remote(door);
@@ -12,15 +14,18 @@ public class DogDoorSimulator{
         recognizer.recognizer("Au au!");
         System.out.println("Fido saiu");
         System.out.println("Fido ja terminou");
+
         try{
             Thread.sleep(10000);
         } catch (InterruptedException e){
             System.out.println("Ops...");
         }
+
         System.out.println("Fido late para entrar...");
         recognizer.recognizer("Au!");
 //        remote.pressButton();
         System.out.println("Fido ja voltou para dentro");
+
     }
 
 }
