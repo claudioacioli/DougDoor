@@ -9,13 +9,13 @@ class DogDoor{
     private int duration;
 
     DogDoor(){
-        this.open = false;
-        this.duration = 5000;
+        open = false;
+        duration = 5000;
     }
 
-    DogDoor(int secondsToClose){
-        this.duration = secondsToClose * 1000;
-        this.open = false;
+    DogDoor(int seconds){
+        setDuration(seconds);
+        open = false;
     }
 
     void open(){
@@ -27,12 +27,16 @@ class DogDoor{
                 DogDoor.this.close();
                 timer.cancel();
             }
-        }, this.duration);
+        }, duration);
     }
 
     void close(){
         System.out.println("A porta para cachorros fecha.");
         open = false;
+    }
+
+    void setDuration(int seconds){
+        duration = seconds * 1000;
     }
 
     boolean isOpen(){
