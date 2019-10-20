@@ -10,9 +10,12 @@ class BarkRecognizer{
 
     void recognizer(Bark bark){
         System.out.println("BackRecognizer: Ouvi um '" + bark.getSound() + "'");
-        if(this.door.getAllowedBark().equal(bark))
-            this.door.open();
-        else
-            System.out.println("Este cachorro nao esta cadastrado.");
+        for(Bark allowedBark : door.getAllowedBark())
+            if(allowedBark.equal(bark)) {
+                door.open();
+                return;
+            }
+        System.out.println("Este cachorro nao esta cadastrado.");
+
     }
 }

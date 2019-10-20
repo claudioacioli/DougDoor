@@ -1,17 +1,20 @@
 package dougdoor;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
 class DogDoor{
 
     private boolean open;
-    private Bark allowedBark;
+    private List<Bark> allowedBarks;
     private int duration;
 
     DogDoor(){
         open = false;
         duration = 5000;
+        allowedBarks = new LinkedList<>();
     }
 
     DogDoor(int seconds){
@@ -44,11 +47,11 @@ class DogDoor{
         return open;
     }
 
-    void setAllowedBark(Bark bark) {
-        allowedBark = bark;
+    void addAllowedBark(Bark bark){
+        allowedBarks.add(bark);
     }
 
-    Bark getAllowedBark() {
-        return allowedBark;
+    List<Bark> getAllowedBark() {
+        return allowedBarks;
     }
 }
