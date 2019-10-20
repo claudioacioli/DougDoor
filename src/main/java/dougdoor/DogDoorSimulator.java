@@ -6,12 +6,13 @@ public class DogDoorSimulator{
 
         DogDoor door = new DogDoor();
         door.setDuration(3);
+        door.setBark("Auuuuuuuu");
         BarkRecognizer recognizer = new BarkRecognizer(door);
 
         Remote remote = new Remote(door);
         System.out.println("Fido late para sair");
 //        remote.pressButton();
-        recognizer.recognizer("Au au!");
+        recognizer.recognizer("Auuuuuuuu");
         System.out.println("Fido saiu");
         System.out.println("Fido ja terminou");
 
