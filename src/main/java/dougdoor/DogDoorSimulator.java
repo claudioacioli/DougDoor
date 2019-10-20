@@ -5,14 +5,15 @@ public class DogDoorSimulator{
     public static void main(String[] args) {
 
         DogDoor door = new DogDoor();
+        Bark ownerBark = new Bark("Auuuuuuu");
+        door.setAllowedBark(ownerBark);
         door.setDuration(3);
-        door.setBark("Auuuuuuuu");
         BarkRecognizer recognizer = new BarkRecognizer(door);
 
         Remote remote = new Remote(door);
         System.out.println("Fido late para sair");
 //        remote.pressButton();
-        recognizer.recognizer("Auuuuuuuu");
+        recognizer.recognizer(ownerBark);
         System.out.println("Fido saiu");
         System.out.println("Fido ja terminou");
 
@@ -23,7 +24,7 @@ public class DogDoorSimulator{
         }
 
         System.out.println("Fido late para entrar...");
-        recognizer.recognizer("Au!");
+        recognizer.recognizer(ownerBark);
 //        remote.pressButton();
         System.out.println("Fido ja voltou para dentro");
 
