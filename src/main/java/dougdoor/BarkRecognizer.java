@@ -10,6 +10,7 @@ class BarkRecognizer{
 
     void recognizer(String bark){
         System.out.println("BackRecognizer: Ouvi um '" + bark + "'");
-        this.door.open();
+        if(this.door.getBark() != null && this.door.getBark().equals(bark))
+            this.door.open();
     }
 }
