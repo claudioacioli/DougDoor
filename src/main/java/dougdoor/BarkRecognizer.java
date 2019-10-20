@@ -8,9 +8,11 @@ class BarkRecognizer{
         this.door = door;
     }
 
-    void recognizer(String bark){
-        System.out.println("BackRecognizer: Ouvi um '" + bark + "'");
-        if(this.door.getBark() != null && this.door.getBark().equals(bark))
+    void recognizer(Bark bark){
+        System.out.println("BackRecognizer: Ouvi um '" + bark.getSound() + "'");
+        if(this.door.getAllowedBark().equal(bark))
             this.door.open();
+        else
+            System.out.println("Este cachorro nao esta cadastrado.");
     }
 }
